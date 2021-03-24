@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: strive-system-manage1
+  cloud:
+    nacos:
+      discovery:
+        group: DEFAULT_GROUP
+        server-addr: ${spring.cloud.nacos.config.server-addr}
+      config:
+        server-addr: 172.16.74.170:8848
+        file-extension: yml
+
+#logging:
+#  level:
+#    com:
+#      alibaba:
+#        cloud:
+#          nacos:
+#            client: warn
+
+server:
+  port: 8888

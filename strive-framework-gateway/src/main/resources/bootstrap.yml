@@ -1,0 +1,47 @@
+#strive:
+#  api-doc:
+#    dockets:
+#      - title: 初始页
+#        version: v1
+#        base-package: ai.yuhan.gateway.conf
+#        bean-name: docket1
+spring:
+  application:
+    name: strive-gateway
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        group: DEFAULT_GROUP
+        server-addr: 192.168.0.126:8848
+        ip: 127.0.0.1
+        port: 8080
+      config:
+        server-addr: 192.168.0.126:8848
+#        file-extension: yml
+    gateway:
+      discovery:
+        locator:
+          #����gateway��nacos�ϻ�ȡ�����б�
+          enabled: true
+      enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      #�򿪶˵�����
+      show-details: always
+logging:
+  level:
+    com:
+      alibaba:
+        cloud:
+          nacos:
+            client: warn
+
+server:
+  port: 8080

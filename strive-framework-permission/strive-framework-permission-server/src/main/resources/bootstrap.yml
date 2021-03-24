@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: strive-permission-server1
+  cloud:
+    nacos:
+      discovery:
+        group: DEFAULT_GROUP
+        server-addr: ${spring.cloud.nacos.config.server-addr}
+      config:
+        server-addr: 172.16.74.170:8848
+        file-extension: yml
+
+server:
+  port: 8088

@@ -1,0 +1,80 @@
+strive:
+  api-doc:
+    dockets:
+      - title: 初始页
+        version: v1
+        base-package: ai.yuhan.permission.server.controller
+        bean-name: docket1
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.16.74.170:3306/permission?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: phenom
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+  redis:
+    host: 172.16.74.170
+    port: 6379
+
+  rabbitmq:
+    host: 172.16.74.170
+    port: 5672
+    virtual-host: tuling
+    username: tuling
+    password: tuling
+    #开启消息确认模式
+    publisher-confirms: true
+    #开启消息可达监听
+    publisher-returns: true
+    #开启不可达消息不会被broker给删除
+    template:
+      mandatory: true
+    #设置连接超时
+    connection-timeout: 10000
+    listener:
+      simple:
+        concurrency: 5
+        max-concurrency: 10
+        acknowledge-mode: manual
+        prefetch: 1
+        default-requeue-rejected: false
+      direct:
+        acknowledge-mode: manual
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:ai/yuhan/permission/server/mapper/xml/*Mapper.xml
+  type-aliases-package: ai.yuhan.permission.server.mapper.**
+
+seata:
+  tx-service-group: my_test_tx_group # Seata 事务组编号，用于 TC 集群名
+  # Seata 服务配置项，对应 ServiceProperties 类
+  service:
+    # 虚拟组和分组的映射
+    vgroupMapping:
+      my_test_tx_group: default
+  # Seata 注册中心配置项，对应 RegistryProperties 类
+  registry:
+    type: nacos # 注册中心类型，默认为 file
+    nacos:
+      application: seata-server
+      serverAddr: 172.16.74.170:8848 # Nacos 服务地址
+      group: SEATA_GROUP
+
+dubbo:
+  registry:
+    protocol: zookeeper
+    address: 172.16.74.170:2181
+  protocol:
+    name: dubbo
+    port: 20880
+
+
