@@ -1,4 +1,4 @@
-# striv
+# strive
 strive框架集成:
   1.系统管理模块
   2.核心模块
