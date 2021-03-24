@@ -187,7 +187,7 @@
         </dependencies>
     </dependencyManagement>
 
-    <distributionManagement>
+   <!-- <distributionManagement>
         <repository>
             <id>nexus-releases</id>
             <name>Nexus Release Repository</name>
@@ -198,5 +198,5 @@
             <name>Nexus Snapshot Repository</name>
             <url>http://192.168.0.125:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement>-->
 </project>
