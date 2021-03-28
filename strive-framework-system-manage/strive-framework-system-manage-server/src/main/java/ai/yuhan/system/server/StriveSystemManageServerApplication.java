@@ -1,4 +1,4 @@
-package ai.yuhan;
+package ai.yuhan.system.server;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
