@@ -7,6 +7,7 @@ import com.rabbitmq.client.Connection;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.concurrent.TimeoutException;
 
 /**
  * @Author: bingcun.chen
@@ -16,17 +17,19 @@ import java.util.Scanner;
  */
 public class WeatherBureau {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, TimeoutException {
         //创建tcp连接
         Connection connection = RabbitUtils.getConnection();
         //创建Channel
         Channel channel = connection.createChannel();
         //获取输入的字符串
-        String next = new Scanner(System.in).next();
-
-        channel.exchangeDeclare(RabbitConstant.EXCHANGE_WEATHER,"fanout");
-        channel.basicPublish(RabbitConstant.EXCHANGE_WEATHER,"",null,next.getBytes());
-
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()){
+            String next = scanner.next();
+            if(next.equals("exit"))break;
+            channel.exchangeDeclare(RabbitConstant.EXCHANGE_WEATHER,"fanout");
+            channel.basicPublish(RabbitConstant.EXCHANGE_WEATHER,"",null,next.getBytes());
+        }
         channel.close();
         connection.close();
     }
