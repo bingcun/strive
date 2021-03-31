@@ -3,6 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/strive.iml" filepath="$PROJECT_DIR$/.idea/strive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strive-framework-demo/strive-framework-demo.iml" filepath="$PROJECT_DIR$/strive-framework-demo/strive-framework-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strive-framework-gateway/strive-framework-gateway.iml" filepath="$PROJECT_DIR$/strive-framework-gateway/strive-framework-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strive-framework-microservice-core/strive-framework-microservice-core.iml" filepath="$PROJECT_DIR$/strive-framework-microservice-core/strive-framework-microservice-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strive-framework-permission/strive-framework-permission.iml" filepath="$PROJECT_DIR$/strive-framework-permission/strive-framework-permission.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strive-framework-permission/strive-framework-permission-api/strive-framework-permission-api.iml" filepath="$PROJECT_DIR$/strive-framework-permission/strive-framework-permission-api/strive-framework-permission-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strive-framework-permission/strive-framework-permission-server/strive-framework-permission-server.iml" filepath="$PROJECT_DIR$/strive-framework-permission/strive-framework-permission-server/strive-framework-permission-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strive-framework-system-manage/strive-framework-system-manage.iml" filepath="$PROJECT_DIR$/strive-framework-system-manage/strive-framework-system-manage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strive-framework-system-manage/strive-framework-system-manage-api/strive-framework-system-manage-api.iml" filepath="$PROJECT_DIR$/strive-framework-system-manage/strive-framework-system-manage-api/strive-framework-system-manage-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strive-framework-system-manage/strive-framework-system-manage-server/strive-framework-system-manage-server.iml" filepath="$PROJECT_DIR$/strive-framework-system-manage/strive-framework-system-manage-server/strive-framework-system-manage-server.iml" />
     </modules>
   </component>
 </project>
