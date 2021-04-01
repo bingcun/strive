@@ -1,6 +1,6 @@
 package ai.yuhan.demo.rabbitmq.springboot.compent;
 
-import com.baiqi.springboot.vo.MsgTxtBo;
+import ai.yuhan.demo.rabbitmq.springboot.vo.MsgTxtBo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

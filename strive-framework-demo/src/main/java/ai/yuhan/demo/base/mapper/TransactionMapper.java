@@ -1,6 +1,6 @@
-package ai.yuhan.demo.mapper;
+package ai.yuhan.demo.base.mapper;
 
-import ai.yuhan.demo.entity.TB_USER;
+import ai.yuhan.demo.base.entity.TB_USER;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

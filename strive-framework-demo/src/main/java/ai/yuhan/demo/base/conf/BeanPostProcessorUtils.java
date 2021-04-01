@@ -1,12 +1,8 @@
-package ai.yuhan.demo.conf;
+package ai.yuhan.demo.base.conf;
 
-import ai.yuhan.demo.service.BeanPostProcessorService;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
-
-import javax.sound.midi.Soundbank;
 
 /**
  * @Author: bingcun.chen

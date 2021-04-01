@@ -1,4 +1,4 @@
-package ai.yuhan.demo.conf;
+package ai.yuhan.demo.base.conf;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.RedisTemplate;

@@ -18,4 +18,4 @@ mybatis-plus:
     auto-mapping-behavior: full
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath*:ai/yuhan/demo/mapper/xml/*Mapper.xml
-  type-aliases-package: ai.yuhan.demo.mapper.**
+  type-aliases-package: ai.yuhan.demo.base.mapper.**

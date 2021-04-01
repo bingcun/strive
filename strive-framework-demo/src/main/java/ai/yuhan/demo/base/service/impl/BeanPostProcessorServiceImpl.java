@@ -1,9 +1,8 @@
-package ai.yuhan.demo.service.impl;
+package ai.yuhan.demo.base.service.impl;
 
-import ai.yuhan.demo.entity.TB_USER;
-import ai.yuhan.demo.mapper.TransactionMapper;
-import ai.yuhan.demo.service.BeanPostProcessorService;
-import org.springframework.beans.factory.annotation.Autowired;
+import ai.yuhan.demo.base.entity.TB_USER;
+import ai.yuhan.demo.base.mapper.TransactionMapper;
+import ai.yuhan.demo.base.service.BeanPostProcessorService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,7 +10,6 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * @Author: bingcun.chen

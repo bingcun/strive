@@ -1,6 +1,6 @@
-package ai.yuhan.demo.controller;
+package ai.yuhan.demo.base.controller;
 
-import ai.yuhan.demo.service.BeanPostProcessorService;
+import ai.yuhan.demo.base.service.BeanPostProcessorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

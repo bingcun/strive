@@ -1,4 +1,4 @@
-package ai.yuhan.demo.conf;
+package ai.yuhan.demo.base.conf;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;

@@ -1,14 +1,12 @@
-package com.baiqi.springboot;
+package ai.yuhan.demo.rabbitmq.springboot;
 
-import com.baiqi.springboot.compent.MsgSender;
-import com.baiqi.springboot.vo.MsgTxtBo;
-import com.sun.xml.internal.ws.resources.SenderMessages;
+import ai.yuhan.demo.rabbitmq.springboot.compent.MsgSender;
+import ai.yuhan.demo.rabbitmq.springboot.vo.MsgTxtBo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

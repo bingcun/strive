@@ -1,4 +1,4 @@
-package ai.yuhan.demo.conf;
+package ai.yuhan.demo.base.conf;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

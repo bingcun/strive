@@ -1,4 +1,4 @@
-package ai.yuhan.demo.service;
+package ai.yuhan.demo.base.service;
 
 /**
  * @Author: bingcun.chen

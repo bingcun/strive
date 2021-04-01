@@ -1,4 +1,4 @@
-package ai.yuhan.demo.single;
+package ai.yuhan.demo.designpattern.single;
 
 /**
  * @Author: bingcun.chen

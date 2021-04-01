@@ -1,9 +1,8 @@
-package ai.yuhan.demo.conf;
+package ai.yuhan.demo.base.conf;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.annotation.PostConstruct;
 

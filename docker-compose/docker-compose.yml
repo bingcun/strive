@@ -101,58 +101,97 @@ services:
     volumes:
       - ./rabbitmq:/var/lib/rabbitmq    #数据卷映射
 
-  rmqnamesrv:
-    image: foxiswho/rocketmq:server
+  namesrv:
+    image: rocketmqinc/rocketmq
     container_name: rmqnamesrv
+    restart: always
     ports:
       - 9876:9876
     volumes:
-      - ./data/logs:/opt/logs
-      - ./data/store:/opt/store
-    networks:
-      rmq:
-        aliases:
-          - rmqnamesrv
-
-  rmqbroker:
-    image: foxiswho/rocketmq:broker
+      - ./rockmq/logs:/home/rocketmq/logs
+      - ./rockmq/store:/home/rocketmq/store
+    command: sh mqnamesrv
+  broker:
+    image: rocketmqinc/rocketmq
     container_name: rmqbroker
+    restart: always
     ports:
       - 10909:10909
       - 10911:10911
+      - 10912:10912
     volumes:
-      - ./data/logs:/opt/logs
-      - ./data/store:/opt/store
-      - ./data/brokerconf/broker.conf:/etc/rocketmq/broker.conf
-    environment:
-      NAMESRV_ADDR: "rmqnamesrv:9876"
-      JAVA_OPTS: " -Duser.home=/opt"
-      JAVA_OPT_EXT: "-server -Xms128m -Xmx128m -Xmn128m"
-    command: mqbroker -c /etc/rocketmq/broker.conf
+      - ./rockmq/logs:/home/rocketmq/logs
+      - ./rockmq/store:/home/rocketmq/store
+      - ./rockmq/conf/broker.conf:/opt/rocketmq-4.4.0/conf/broker.conf
+    #command: sh mqbroker -n namesrv:9876
+    command: sh mqbroker -n namesrv:9876 -c ../conf/broker.conf
     depends_on:
-      - rmqnamesrv
-    networks:
-      rmq:
-        aliases:
-          - rmqbroker
-  rmqconsole:
+      - namesrv
+    environment:
+      - JAVA_HOME=/usr/lib/jvm/jre
+  console:
     image: styletang/rocketmq-console-ng
-    container_name: rmqconsole
+    container_name: rocketmq-console-ng
+    restart: always
     ports:
-      - 8088:8088
-    environment:
-      JAVA_OPTS: "-Drocketmq.namesrv.addr=rmqnamesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false"
+      - 8076:8080
     depends_on:
-      - rmqnamesrv
-    networks:
-      rmq:
-        aliases:
-          - rmqconsole
+      - namesrv
+    environment:
+      - JAVA_OPTS= -Dlogging.level.root=info   -Drocketmq.namesrv.addr=rmqnamesrv:9876
+      - Dcom.rocketmq.sendMessageWithVIPChannel=false
 
-networks:
-  rmq:
-    name: rmq
-    driver: bridge
+#  rmqnamesrv:
+#    image: foxiswho/rocketmq:server
+#    container_name: rmqnamesrv
+#    ports:
+#      - 9876:9876
+#    volumes:
+#      - ./data/logs:/opt/logs
+#      - ./data/store:/opt/store
+#    networks:
+#      rmq:
+#        aliases:
+#          - rmqnamesrv
+#  rmqbroker:
+#    image: foxiswho/rocketmq:broker
+#    container_name: rmqbroker
+#    ports:
+#      - 10909:10909
+#      - 10911:10911
+#    volumes:
+#      - ./data/logs:/opt/logs
+#      - ./data/store:/opt/store
+#      - ./data/brokerconf/broker.conf:/etc/rocketmq/broker.conf
+#    environment:
+#      NAMESRV_ADDR: "rmqnamesrv:9876"
+#      JAVA_OPTS: " -Duser.home=/opt"
+#      JAVA_OPT_EXT: "-server -Xms128m -Xmx128m -Xmn128m"
+#    command: mqbroker -c /etc/rocketmq/broker.conf
+#    depends_on:
+#      - rmqnamesrv
+#    networks:
+#      rmq:
+#        aliases:
+#          - rmqbroker
+#  rmqconsole:
+#    image: styletang/rocketmq-console-ng
+#    container_name: rmqconsole
+#    ports:
+#      - 8088:8088
+#    environment:
+#      JAVA_OPTS: "-Drocketmq.namesrv.addr=rmqnamesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false"
+#    depends_on:
+#      - rmqnamesrv
+#    networks:
+#      rmq:
+#        aliases:
+#          - rmqconsole
+#
+#networks:
+#  rmq:
+#    name: rmq
+#    driver: bridge
 #  integrate-uaap:
 #    image: docker.wiseloong.com/snapshot/fighter-microservice-integrate-uaap:1.7.2-SNAPSHOT
 #    container_name: integrate-uaap

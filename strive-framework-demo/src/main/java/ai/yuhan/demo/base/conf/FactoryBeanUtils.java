@@ -1,7 +1,6 @@
-package ai.yuhan.demo.conf;
+package ai.yuhan.demo.base.conf;
 
 import org.springframework.beans.factory.FactoryBean;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
@@ -31,7 +30,7 @@ public class FactoryBeanUtils implements FactoryBean {
 //    public static void main(String[] args) {
 //        AnnotationConfigApplicationContext applicationContext =
 //                new AnnotationConfigApplicationContext();
-//        applicationContext.scan("ai.yuhan.demo.conf");
+//        applicationContext.scan("ai.yuhan.demo.base.conf");
 //        applicationContext.refresh();
 //
 ////        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();

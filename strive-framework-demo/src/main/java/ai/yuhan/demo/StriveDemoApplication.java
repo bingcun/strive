@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @Email: 820306546@qq.com
  */
 @SpringBootApplication
-@MapperScan("ai.yuhan.demo.mapper")
+@MapperScan("ai.yuhan.demo.base.mapper")
 @EnableTransactionManagement
 public class StriveDemoApplication {
     public static void main(String[] args) {
