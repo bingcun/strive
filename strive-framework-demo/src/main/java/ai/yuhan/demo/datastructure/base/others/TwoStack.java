@@ -1,4 +1,4 @@
-package ai.yuhan.demo.datastructure.careers.others;
+package ai.yuhan.demo.datastructure.base.others;
 
 import java.util.Stack;
 

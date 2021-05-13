@@ -1,4 +1,4 @@
-package ai.yuhan.demo.datastructure.careers.testsort;
+package ai.yuhan.demo.datastructure.base.others.testsort;
 
 /**
  * @Author: bingcun.chen

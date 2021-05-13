@@ -1,7 +1,4 @@
-package ai.yuhan.demo.datastructure.careers.others;
-
-import java.util.ArrayList;
-import java.util.List;
+package ai.yuhan.demo.datastructure.base.others;
 
 /**
  * @Author: bingcun.chen

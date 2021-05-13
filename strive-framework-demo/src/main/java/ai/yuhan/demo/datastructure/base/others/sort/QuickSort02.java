@@ -1,4 +1,4 @@
-package ai.yuhan.demo.datastructure.careers.sort;
+package ai.yuhan.demo.datastructure.base.others.sort;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package ai.yuhan.demo.datastructure.careers.test01;
+package ai.yuhan.demo.datastructure.base.others.test01;
 
 import org.junit.Test;
 
