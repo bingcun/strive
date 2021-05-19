@@ -23,6 +23,7 @@ import java.util.stream.Collectors;
  */
 public class NC89 {
 
+    //todo 补充
     public String trans(String s, int n) {
         // write code here
         if(n <= 3)return "";
