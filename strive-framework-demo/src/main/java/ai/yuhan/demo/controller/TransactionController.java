@@ -1,5 +1,6 @@
 package ai.yuhan.demo.controller;
 
+import ai.yuhan.demo.utils.hrstrix.hystrixCommand;
 import ai.yuhan.demo.service.BeanPostProcessorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,12 @@ public class TransactionController {
     @GetMapping(value = "/getTransaction")
     public String getTransaction(){
         return beanPostProcessorService.getTransaction();
+    }
+
+    @GetMapping(value = "/testHystrix")
+    @hystrixCommand(limit = 2,timeScope = 5)
+    public String testHystrix(String name,String age){
+        return "success";
     }
 
 }
