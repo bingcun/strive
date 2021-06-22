@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.annotation.PostConstruct;
+import java.util.regex.Pattern;
 
 
 @Component
@@ -49,5 +50,25 @@ public class Swagger2Config implements ApplicationContextAware {
             this.beanFactory = ((GenericApplicationContext)applicationContext).getBeanFactory();
             this.defaultListableBeanFactory = ((GenericApplicationContext)applicationContext).getDefaultListableBeanFactory();
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isNumeric("jjj"));
+    }
+
+
+
+    public static boolean isNumeric(String str) {
+        Pattern pattern = Pattern.compile("[0-9]*");
+        if (str.indexOf(".") > 0) {//判断是否有小数点
+            if (str.indexOf(".") == str.lastIndexOf(".") && str.split("\\.").length == 2) { //判断是否只有一个小数点
+                return pattern.matcher(str.replace(".", "")).matches();
+            } else {
+                return false;
+            }
+        } else {
+            return pattern.matcher(str).matches();
+        }
+
     }
 }

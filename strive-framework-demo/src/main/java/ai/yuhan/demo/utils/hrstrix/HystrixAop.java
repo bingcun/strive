@@ -1,6 +1,5 @@
 package ai.yuhan.demo.utils.hrstrix;
 
-import ai.yuhan.demo.common.StriveDemoConstant;
 import ai.yuhan.demo.utils.RedisUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -39,7 +38,7 @@ public class HystrixAop {
         //limit timeScope 两个参数必填
         if(limit>0 && timeScope>0){
             //如果用在浏览器端可以通过session做为唯一标识来限流,如果是App可以用用户Id来防值重刷,以验证码为例防止重刷
-            final String redisKey = StriveDemoConstant.STRIVE_CAPTCHA_CODE + ":" + "userId";
+            final String redisKey = "Strive_const" + ":" + "userId";
             String currentTimes = RedisUtils.get(redisKey);
             //判断当前值是否存在
             if(StringUtils.isEmpty(currentTimes)){
