@@ -2,7 +2,9 @@ package ai.yuhan.other.datastructure.tuling;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -33,9 +35,21 @@ public class NC014 {
         return max;
     }
 
+    /**
+     * 榜首时间
+     * @param days
+     * @return
+     */
+    public long firstStr(int[] days){
+        return Arrays.stream(days)
+                .filter(ns -> Objects.nonNull(days) && ns == 1)
+                .count();
+    }
+
     @Test
     public void test() {
         int[] arr = new int[]{1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 2, 1, 1, 0};
+        System.out.println(firstStr(arr));
         System.out.println(longestStr(arr));
     }
 

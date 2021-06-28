@@ -79,7 +79,8 @@ public class offer10 {
 
     @Test
     public void test(){
-        System.out.println(numWays(7));
+        System.out.println(numWays02(50));
+        System.out.println(numWays01(50));
 
     }
 
