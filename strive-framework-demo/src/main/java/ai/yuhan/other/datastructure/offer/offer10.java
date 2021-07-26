@@ -76,11 +76,10 @@ public class offer10 {
         return dp[n];
     }
 
-
     @Test
     public void test(){
-        System.out.println(numWays02(50));
-        System.out.println(numWays01(50));
+        System.out.println(numWays02(10));
+//        System.out.println(numWays01(50));
 
     }
 

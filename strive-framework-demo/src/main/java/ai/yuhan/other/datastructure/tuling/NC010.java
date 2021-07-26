@@ -52,9 +52,31 @@ public class NC010 {
         return nums[n];
     }
 
+    /**
+     * 动态规划解决斐波那契数列
+     * @param n
+     * @return
+     */
+    public int fibonacciSequence02(int n){
+        if(n<2)return n;
+        int p = 0,q = 0,r = 1;
+        for(int i=2;i<=n;i++){
+            p = q;
+            q = r;
+            r = p + q;
+        }
+        return r;
+    }
+
+
     @Test
     public void test01(){
-        System.out.println(fibonacciSequence01(40));
+        System.out.println(fibonacciSequence01(20));
+    }
+
+    @Test
+    public void test03(){
+        System.out.println(fibonacciSequence02(20));
     }
 
     /**
@@ -81,7 +103,6 @@ public class NC010 {
     public void test02(){
         System.out.println(iterate(30));
     }
-
 
 
 

@@ -67,6 +67,24 @@ public class NC001 {
     }
 
 
+    public ListNode deleteNode(ListNode head, int val) {
+        int size = 0;
+        ListNode first = head;
+        while (first != null || first.data !=val){
+            size++;
+        }
+
+        ListNode second = head;
+        for(int i=0;i< size - 1;i++){
+            second = second.next;
+        }
+
+        second.next = second.next.next;
+
+        return head;
+    }
+
+
     @Test
     public void test01(){
         ListNode listnode5 = new ListNode(5,null);
@@ -86,8 +104,11 @@ public class NC001 {
         ListNode listnode2 = new ListNode(2,listnode3);
         ListNode listnode1 = new ListNode(1,listnode2);
 
-        ListNode listNode = reverseLinkedNode02(listnode1);
-        System.out.println(listNode);
+//        ListNode listNode = reverseLinkedNode02(listnode1);
+//        System.out.println(listNode);
+
+
+        deleteNode(listnode1,2);
     }
 
 

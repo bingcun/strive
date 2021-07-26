@@ -2,7 +2,7 @@ package ai.yuhan.other.datastructure;
 
 import lombok.Data;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * @description:
@@ -353,7 +353,46 @@ public class Test {
         deleteNode02(listNode01,1);
     }
 
+    @org.junit.Test
+    public void test0222(){
+        recursionData();
+//        testOutOfHeapMemory();
+    }
+    private void recursionData(){
+        List<StringBuffer> list = new ArrayList<>();
+        while (true){
+            StringBuffer sb = new StringBuffer();
+            for(int i =0;i<10000;i++){
+                sb.append(i);
+            }
+            list.add(sb);
+        }
+    }
 
+    @org.junit.Test
+    public void test01111(){
+        int[] ass = new int[]{1,8,6,2,5,4,8,3,7};
+
+        System.out.println(maxArea(ass));
+    }
+
+    public int maxArea(int[] height) {
+
+        int i = 0,j = height.length - 1;
+        int res = 0;
+
+        while (i < j){
+            int area = (j - i) * Math.min(height[i],height[j]);
+            res = Math.max(res,area);
+            if(height[i] < height[j]){
+                i++;
+            }else {
+                j--;
+            }
+        }
+
+        return res;
+    }
 
 
 
