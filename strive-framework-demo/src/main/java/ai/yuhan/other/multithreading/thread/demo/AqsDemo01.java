@@ -1,4 +1,4 @@
-package ai.yuhan.other.multithreading.thread;
+package ai.yuhan.other.multithreading.thread.demo;
 
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 

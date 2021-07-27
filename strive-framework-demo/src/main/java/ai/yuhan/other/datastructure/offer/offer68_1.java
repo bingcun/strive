@@ -1,9 +1,6 @@
 package ai.yuhan.other.datastructure.offer;
 
-import ai.yuhan.other.multithreading.thread.SemaphoreDemo;
-import io.lettuce.core.output.StatusOutput;
 import org.junit.Test;
-import sun.reflect.generics.tree.Tree;
 
 import java.util.ArrayList;
 import java.util.List;

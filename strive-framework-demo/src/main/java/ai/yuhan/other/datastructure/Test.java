@@ -394,6 +394,15 @@ public class Test {
         return res;
     }
 
+    public int sumNums(int n) {
+        if(n==1)return 1;
+        n += sumNums(n -1);
+        return n;
+    }
 
+    @org.junit.Test
+    public void testsum(){
+        System.out.println(sumNums(10000));
+    }
 
 }

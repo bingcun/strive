@@ -1,4 +1,4 @@
-package ai.yuhan.other.multithreading.thread;
+package ai.yuhan.other.multithreading.thread.demo;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,10 +13,5 @@ public class ThreadPool {
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
-
-
     }
-
-
-
 }
