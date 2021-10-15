@@ -12,9 +12,10 @@ spring:
     serialization:
       write-dates-as-timestamps: false
   redis:
-    host: 192.168.254.128
+    host: 10.39.47.244
     port: 6379
     database: 0
+    password: FNpreadmin123
 
 mybatis-plus:
   configuration:

@@ -1,5 +1,6 @@
 package ai.yuhan.demo;
 
+import org.assertj.core.util.Lists;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

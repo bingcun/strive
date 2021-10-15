@@ -1,5 +1,11 @@
 package com.yuhan.meituan;
 
+import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Handler;
+
 /**
  * @Author: bingcun.chen
  * @Date: 2021/3/8 20:17
@@ -43,6 +49,13 @@ public class Written {
         for (int i = result.length - 1; i >= 0; i--) {
             System.out.print(result[i]);
         }
+    }
+
+    @Test
+    public void test(){
+        Map<String,String> maps = new HashMap<>(11);
+        maps.put("","");
+        System.out.println(maps.size());
     }
 
 

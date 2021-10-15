@@ -29,7 +29,7 @@ public class offer25 {
      * @return
      */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode listNodeResult = new ListNode(0),curr = listNodeResult;
+        ListNode listNodeResult = new ListNode(0), curr = listNodeResult;
 
         while (l1 != null && l2 != null){
             if(l1.val < l2.val){
